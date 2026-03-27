@@ -1,5 +1,12 @@
 # gstack
 
+> **[FOR SANTIAGO]** You asked to be Andrej Karpathy analyzing this repo — note that
+> the README opens with a Karpathy quote. This is his level: not typing code,
+> just directing agents. That's exactly the mode you want to operate in.
+> **Start here:** Read "The sprint" section below. That sequence (`Think → Plan →
+> Build → Review → Test → Ship → Reflect`) is your operating system for both projects.
+> Your full playbook is in `PROJECTS_GUIDE.md`. Terminology in `DICTIONARY.md`.
+
 > "I don't think I've typed like a line of code probably since December, basically, which is an extremely large change." — [Andrej Karpathy](https://fortune.com/2026/03/21/andrej-karpathy-openai-cofounder-ai-agents-coding-state-of-psychosis-openclaw/), No Priors podcast, March 2026
 
 When I heard Karpathy say this, I wanted to find out how. How does one person ship like a team of twenty? Peter Steinberger built [OpenClaw](https://github.com/openclaw/openclaw) — 247K GitHub stars — essentially solo with AI agents. The revolution is here. A single builder with the right tooling can move faster than a traditional team.
@@ -136,6 +143,20 @@ gstack is a process, not a collection of tools. The skills run in the order a sp
 
 **Think → Plan → Build → Review → Test → Ship → Reflect**
 
+> **[FOR SANTIAGO]** This sprint sequence maps directly to how you'd run a feature
+> for Synthesis Intelligence:
+> - **Think** = `/office-hours` (sharpen the product thesis)
+> - **Plan** = `/autoplan` (CEO + design + eng review in one command)
+> - **Build** = Claude writes the code
+> - **Review** = `/review` (catch bugs before they ship)
+> - **Test** = `/qa` (real browser, real clicks, finds real bugs)
+> - **Ship** = `/ship` → `/land-and-deploy` (PR + merge + deploy + monitor)
+> - **Reflect** = `/retro` (what shipped, what to improve)
+>
+> For DolarApp: you won't run the full sprint, but borrow `/investigate`'s
+> 4-phase methodology (investigate → analyze → hypothesize → implement)
+> for your KYC funnel root-cause analysis.
+
 Each skill feeds into the next. `/office-hours` writes a design doc that `/plan-ceo-review` reads. `/plan-eng-review` writes a test plan that `/qa` picks up. `/review` catches bugs that `/ship` verifies are fixed. Nothing falls through the cracks because every step knows what came before it.
 
 | Skill | Your specialist | What they do |
@@ -160,6 +181,14 @@ Each skill feeds into the next. `/office-hours` writes a design doc that `/plan-
 | `/browse` | **QA Engineer** | Real Chromium browser, real clicks, real screenshots. ~100ms per command. |
 | `/setup-browser-cookies` | **Session Manager** | Import cookies from your real browser (Chrome, Arc, Brave, Edge) into the headless session. Test authenticated pages. |
 | `/autoplan` | **Review Pipeline** | One command, fully reviewed plan. Runs CEO → design → eng review automatically with encoded decision principles. Surfaces only taste decisions for your approval. |
+
+> **[FOR SANTIAGO — DolarApp Priority Skills]**
+> For the 60-hour case study, these are the 5 skills to use immediately:
+> 1. `/xlsx` — analyze the KYC_Details and KYC_Summary datasets
+> 2. `/pptx` — build the presentation
+> 3. `/pdf` — convert to PDF for submission
+> 4. `/investigate` — borrow its 4-phase framework for your analysis structure
+> 5. `/office-hours` — use it to sharpen your recommendation narrative before writing
 
 ### Power tools
 

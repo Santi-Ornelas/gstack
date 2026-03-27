@@ -2,9 +2,24 @@
 
 This document explains **why** gstack is built the way it is. For setup and commands, see CLAUDE.md. For contributing, see CONTRIBUTING.md.
 
+> **[FOR SANTIAGO]** You don't need to read this whole file to use gstack.
+> Read the "core idea" section below for the one insight that makes everything click:
+> why the browse tool is fast, and why it remembers your login sessions.
+> Then jump to "Security model" — it's directly relevant to Synthesis Intelligence
+> (financial platform = strict security requirements).
+
 ## The core idea
 
 gstack gives Claude Code a persistent browser and a set of opinionated workflow skills. The browser is the hard part — everything else is Markdown.
+
+> **[FOR SANTIAGO — Plain English]** The "hard part" is making the browser fast
+> and stateful. Here's the analogy: Imagine every time you asked someone to click
+> a link for you, they had to open a brand new browser window (3-5 seconds), log
+> in again (10+ seconds), navigate back to where you were (5+ seconds), and THEN
+> click the link. That would be insane. gstack solves this by keeping Chrome running
+> in the background permanently — so each command is just "send an instruction to
+> the already-open browser" (~100ms). Your login sessions, cookies, and open tabs
+> survive between commands.
 
 The key insight: an AI agent interacting with a browser needs **sub-second latency** and **persistent state**. If every command cold-starts a browser, you're waiting 3-5 seconds per tool call. If the browser dies between commands, you lose cookies, tabs, and login sessions. So gstack runs a long-lived Chromium daemon that the CLI talks to over localhost HTTP.
 
@@ -80,6 +95,13 @@ Random port between 10000-60000 (retry up to 5 on collision). This means 10 Cond
 The build writes `git rev-parse HEAD` to `browse/dist/.version`. On each CLI invocation, if the binary's version doesn't match the running server's `binaryVersion`, the CLI kills the old server and starts a new one. This prevents the "stale binary" class of bugs entirely — rebuild the binary, next command picks it up automatically.
 
 ## Security model
+
+> **[FOR SANTIAGO — Synthesis Intelligence]** Read this section carefully.
+> The security model described here (localhost-only, bearer token auth, no
+> cookie values in logs) is the *minimum* baseline for a financial platform.
+> When you build Synthesis Intelligence, you'll need to apply similar thinking
+> to your API layer, your user auth, and especially how you store any financial
+> data users upload. Run `/cso` early and often.
 
 ### Localhost only
 

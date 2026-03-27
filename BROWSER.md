@@ -2,6 +2,24 @@
 
 This document covers the command reference and internals of gstack's headless browser.
 
+> **[FOR SANTIAGO]** The browser tool (`/browse`, or `$B` in commands) is your
+> most powerful tool for both projects:
+>
+> **For Synthesis Intelligence:**
+> - Test your platform's research workflow in a real browser without opening Chrome
+> - Take screenshots of each screen for demos and investor decks
+> - Test the authenticated experience (log in once, stay logged in)
+>
+> **For DolarApp case study:**
+> - If you build a data visualization or dashboard, test it here
+> - Use `screenshot` commands to capture evidence for your report
+>
+> **The commands you'll use most:**
+> - `$B goto https://url` — navigate to a page
+> - `$B screenshot` — take a screenshot (great for reports)
+> - `$B snapshot -i` — see what's on the page (for clicking)
+> - `$B click @e3` — click an element by its ref number
+
 ## Command reference
 
 | Category | Commands | What for |
@@ -77,6 +95,14 @@ browse/
 ```
 
 ### The snapshot system
+
+> **[FOR SANTIAGO — Plain English]** Think of a snapshot like a "map" of the
+> current webpage that Claude can read. When Claude takes a snapshot, every
+> button, link, and form field gets a label: @e1, @e2, @e3, etc. Then Claude
+> can say "click @e3" instead of trying to describe the element visually.
+> It's like giving Claude a schematic instead of a photograph.
+> The `--annotate` flag takes a real screenshot with those labels overlaid
+> in red boxes — very useful for debugging or showing in reports.
 
 The browser's key innovation is ref-based element selection, built on Playwright's accessibility tree API:
 

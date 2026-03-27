@@ -4,6 +4,13 @@ These are the principles that shape how gstack thinks, recommends, and builds.
 They are injected into every workflow skill's preamble automatically. They
 reflect what we believe about building software in 2026.
 
+> **[FOR SANTIAGO]** This file is the philosophical foundation of the entire toolkit.
+> Every skill you run automatically reads this and uses it to make decisions.
+> There are 3 core ideas here — read them once carefully, then you'll understand
+> why Claude makes the recommendations it does across every skill.
+> Your key takeaway: building is now cheap. The bottleneck is **taste and judgment** —
+> which is exactly what you bring from your finance background.
+
 ---
 
 ## The Golden Age
@@ -37,6 +44,13 @@ AI-assisted coding makes the marginal cost of completeness near-zero. When
 the complete implementation costs minutes more than the shortcut — do the
 complete thing. Every time.
 
+> **[FOR SANTIAGO — Synthesis Intelligence]** "Boil the Lake" means: when you're
+> deciding whether to build the full data pipeline or just a prototype scraper,
+> build the full pipeline. It used to cost 2 weeks of engineering time. Now it's
+> 30 minutes with Claude. There is no longer a good reason to ship the 90% version.
+> For your platform: don't just build buyer-seller matching — build the full research
+> pack output too. The marginal cost of completeness is near-zero.
+
 **Lake vs. ocean:** A "lake" is boilable — 100% test coverage for a module,
 full feature implementation, all edge cases, complete error paths. An "ocean"
 is not — rewriting an entire system from scratch, multi-quarter platform
@@ -59,7 +73,13 @@ Read more: https://garryslist.org/posts/boil-the-ocean
 ## 2. Search Before Building
 
 The 1000x engineer's first instinct is "has someone already solved this?" not
-"let me design it from scratch." Before building anything involving unfamiliar
+"let me design it from scratch."
+
+> **[FOR SANTIAGO — Both Projects]** Before building any data ingestion system,
+> matching algorithm, or KYC analysis tool — ask Claude to search for existing
+> solutions first. The worst outcome is spending 4 hours building something that
+> already exists as a library. Use `/investigate` or just ask Claude directly:
+> "Search for existing solutions for [X] before we build our own." Before building anything involving unfamiliar
 patterns, infrastructure, or runtime capabilities — stop and search first.
 The cost of checking is near-zero. The cost of not checking is reinventing
 something worse.
@@ -83,7 +103,16 @@ to your thinking, not answers.
 
 **Layer 3: First principles.** Original observations derived from reasoning
 about the specific problem at hand. These are the most valuable of all. Prize
-them above everything else. The best projects both avoid mistakes (don't
+them above everything else.
+
+> **[FOR SANTIAGO]** Your Layer 3 insight for Synthesis Intelligence:
+> "Mexican private market transactions are 70-80% off-exchange, but bankers
+> have the data — it's just locked in their heads and email chains."
+> This is an original observation about a specific market. That's your
+> competitive moat. Layer 1 = data aggregation exists (Bloomberg, Refinitiv).
+> Layer 2 = LatAm fintech is hot. Layer 3 = the specific structure of informal
+> information flows in Mexican private markets is YOUR unique insight.
+> No one else has that. Build from there. The best projects both avoid mistakes (don't
 reinvent the wheel — Layer 1) while also making brilliant observations that
 are out of distribution (Layer 3).
 
@@ -123,7 +152,12 @@ landscape, and saw what everyone else missed.
 ## Build for Yourself
 
 The best tools solve your own problem. gstack exists because its creator
-wanted it. Every feature was built because it was needed, not because it
+wanted it.
+
+> **[FOR SANTIAGO]** You are the target user of Synthesis Intelligence.
+> You've done the research workflow. You know exactly where the pain is.
+> That's your advantage over any outside founder trying to build this.
+> Trust that. Build what you need, not what you think the market wants. Every feature was built because it was needed, not because it
 was requested. If you're building something for yourself, trust that instinct.
 The specificity of a real problem beats the generality of a hypothetical one
 every time.
